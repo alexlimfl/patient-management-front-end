@@ -21,7 +21,8 @@ body {
     line-height: 1.7;
     color: #333;
     background-color: white;
-    margin: 1.5rem;
+    margin: 1.5rem 3rem;
+    transition: all 0.5s ease-in-out;
 }
 
 body.sb-expanded {
@@ -73,17 +74,6 @@ nav ul {
     gap: 1rem;
 }
 
-nav i {
-    border: var(--border--debug);
-    transform: translateX(100%);
-    transition: transform 0.5s ease-in-out;
-}
-
-nav .bx-chevrons-right {
-    transform: rotate(0deg);
-    transform: translateX(100%);
-}
-
 nav li:nth-last-child(2) {
     margin-top: auto;
     border: var(--border--debug)
@@ -92,10 +82,10 @@ nav li:nth-last-child(2) {
 nav a {
     display: flex;
     align-items: center;
-    /* justify-content: left; */
-    gap: 0.625rem;
+    gap: 1.5rem;
     padding: 0.625rem 0.625rem;
-    font-size: 14px;
+    font-size: 24px;
+    --icon-translationX: 30%;
     font-weight: bold;
     line-height: 1;
     color: white;
@@ -105,19 +95,6 @@ nav a {
     transition:
         background-color 0.5s ease-in-out,
         color 0.5s ease-in-out;
-}
-
-.tooltip,
-.badge {
-    display: none;
-}
-
-nav a.active,
-nav a:hover,
-nav a:focus-visible {
-    outline: none;
-    color: var(--primary-blue);
-    background-color: var(--secondary-blue);
 }
 
 nav a span {
@@ -130,6 +107,47 @@ nav a span {
         visibility 0.3s ease-in-out;
     /* background-color: black; */
 
+}
+
+
+nav i {
+    border: var(--border--debug);
+    transform: translateX(var(--icon-translationX));
+    transition: transform 0.5s ease-in-out;
+}
+
+nav .bx-chevrons-right {
+    transform: rotate(0deg) translateX(30%);
+}
+
+.tooltip {
+    display: none;
+}
+
+nav .badge {
+    text-align: center;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    color: var(--primary-blue);
+    background-color: #FFD700;
+    padding: 5px;
+
+    visibility: visible;
+    opacity: 1;
+
+    position: absolute;
+    transform: translateX(75%) scale(75%);
+
+    transition: transform 0.5s ease-in-out;
+}
+
+nav a.active,
+nav a:hover,
+nav a:focus-visible {
+    outline: none;
+    color: var(--primary-blue);
+    background-color: var(--secondary-blue);
 }
 
 nav .update-to-pro {
@@ -151,7 +169,6 @@ nav .update-to-pro {
 
 nav .update-to-pro i {
     position: absolute;
-    bottom: 20px;
 
     transform: translateX(0%);
     color: var(--secondary-blue);
@@ -198,8 +215,7 @@ button:hover {
 }
 
 .sb-expanded nav .bx-chevrons-right {
-    transform: translateX(0%);
-    transform: rotate(-180deg);
+    transform: rotate(-180deg) translateX(0%);
 }
 
 .sb-expanded nav .update-to-pro {
@@ -217,15 +233,24 @@ button:hover {
     /* bottom: auto; */
 }
 
+.sb-expanded .badge {
+    transform: translateX(750%) scale(100%);
+}
+
 
 /* Header ----------------------------------------------------------- */
+
+header,
+main {
+    margin-left: var(--sb-width);
+    transition: all 0.5s ease-in-out;
+}
 
 header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-left: 80px;
 
     gap: 2.5rem;
     padding: 0 20px;
@@ -337,6 +362,7 @@ header .user-profile img {
 
 }
 
+
 /* Table ----------------------------------------------------------- */
 
 .page-title {
@@ -349,19 +375,18 @@ header .user-profile img {
 
 .table-container {
     overflow-x: auto;
-    padding: 20px;
-    transition: all 0.5s ease-in-out;
+    margin-left: 0px;
 }
 
 table {
     width: 100%;
+
     align-items: center;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
     background-color: white;
     /* border: var(--border--debug); */
     border-collapse: collapse;
-    /* margin: 1.5rem 1.5rem; */
-    transition: all 0.5s ease-in-out;
+    white-space: nowrap;
 
 }
 
@@ -398,7 +423,6 @@ tbody tr:nth-child(even) {
     justify-content: center;
     align-items: center;
     gap: 0.625rem;
-    transition: all 0.5s ease-in-out;
 
 }
 
@@ -485,11 +509,6 @@ tbody tr:nth-child(even) {
     Mobile (<768px)
     Icons-only sidebar, responsive table
 */
-
-main,
-header {
-    margin-left: var(--sb-width);
-}
 
 /* Mobile - Tablet */
 @media (max-width: 768px) {

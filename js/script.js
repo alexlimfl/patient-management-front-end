@@ -27,3 +27,4 @@ function updateBody() {
 }
 
 window.addEventListener("resize", updateBody);
+window.addEventListener("DOMContentLoaded", updateBody);
