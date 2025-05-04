@@ -10,18 +10,23 @@
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
     color: black;
-    border: var(--border--debug);
+    /* border: var(--border--debug); */
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
     margin: 0;
     padding: 0;
+    background-color: white;
 }
 
 img {
+    display: block;
     max-width: 48px;
     height: auto;
-    display: block;
 }
 
 /* Wrapper */
@@ -46,6 +51,11 @@ img {
     flex-direction: column;
 }
 
+.centered {
+    display: block;
+    align-content: center;
+}
+
 /* Gap utils */
 .gap-8 {
     gap: 8px;
@@ -59,7 +69,29 @@ img {
     gap: 16px;
 }
 
+/* Margin utils */
+.m-0 {
+    margin: 0;
+}
+
+.h-auto {
+    height: auto;
+}
+
+.w-auto {
+    width: auto;
+}
+
 /* Padding utils */
+
+.p-0 {
+    padding: 0;
+}
+
+.p-4 {
+    padding: 4px;
+}
+
 .p-8 {
     padding: 8px;
 }
@@ -72,7 +104,7 @@ img {
     padding: 16px;
 }
 
-/* Text alignment */
+/* Text utils*/
 .text-center {
     text-align: center;
 }
@@ -85,6 +117,25 @@ img {
     text-align: left;
 }
 
+.text-16-b {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.text-14-b {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.text-12-muted {
+    font-size: 12px;
+    color: #A0A0A0;
+}
+
+.text-nowrap {
+    text-wrap: nowrap;
+}
+
 /* Button Utils*/
 .btn {
     display: inline-block;
@@ -92,6 +143,7 @@ img {
     border: none;
     border-radius: 25px;
     text-align: center;
+    vertical-align: middle;
     text-decoration: none;
     font-size: inherit;
     cursor: pointer;
@@ -111,10 +163,6 @@ img {
     background-color: white;
     color: black;
     border-color: blue;
-}
-
-.btn-primary:hover {
-    background-color: gray;
 }
 
 .btn-primary:hover,
@@ -153,7 +201,7 @@ img {
     transform: translateX(-50%) translateY(0);
 }
 
-/* Transision utils */
+/* Transition utils */
 .transition-fade {
     transition: background-color 0.3s ease;
 }
@@ -164,9 +212,9 @@ img {
 
 
 
-/*Class Selectors*/
+/* Class Selectors */
 
-/*Header -----------------------------------------------------------*/
+/* Header -----------------------------------------------------------*/
 
 .title-text {
     font-size: 24px;
@@ -195,6 +243,7 @@ img {
     width: 100%;
     padding: 8px;
     font-size: 14px;
+    font-weight: bold;
 }
 
 .search-bar .btn {
@@ -275,7 +324,86 @@ span {
     background-color: var(--primary-blue);
 }
 
-/* 
-.side-bar nav {
+/*Table -----------------------------------------------------------*/
 
-} */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: transparent;
+}
+
+.table th,
+.table td {
+    padding: 8px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.table thead th {
+    vertical-align: middle;
+    text-align: center;
+    border: 1px solid #E5E5E5;
+    background-color: var(--secondary-blue);
+}
+
+.table-alt-row tbody tr:nth-child(even) {
+    background-color: #F8F9FA;
+}
+
+.table-bordered th,
+.table-bordered td {
+    border: 1px solid #E5E5E5;
+}
+
+.table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+}
+
+.table-hover tbody tr:hover {
+    background-color: var(--secondary-blue);
+}
+
+.table tbody tr {
+    text-wrap: nowrap;
+}
+
+
+/* Patient Name */
+
+.table .patient-name img {
+    height: 48px;
+    border-radius: 50%;
+}
+
+.table .vip-badge {
+    background-color: #FFD700;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 25%;
+}
+
+.table .flag {
+    width: 32px;
+    height: auto;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.pagination .btn-secondary {
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.pagination .btn-secondary.active {
+    color: white;
+    font-weight: bold;
+    background-color: var(--primary-blue);
+}

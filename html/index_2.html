@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../css/styles_2.css" />
   </head>
   <body class="sb-expanded">
+    <!-- Jump Navbar -->
     <header class="container flex gap-8">
       <div class="container flex flex-column">
         <div class="title-text">患者管理</div>
@@ -35,6 +36,7 @@
       </div>
     </header>
 
+    <!-- Jump Sidebar -->
     <aside class="side-bar">
       <nav>
         <ul class="flex flex-column gap-8">
@@ -164,13 +166,13 @@
       </nav>
     </aside>
 
-    <main>
-      <div class="table-container">
-        <div class="page-title">
-          <h3>Patient</h3>
-          <p></p>
-        </div>
-        <table>
+    <!-- Jump Main -->
+    <main class="container flex flex-column gap-8">
+      <div class="container flex text-16-b">Patient</div>
+
+      <!-- Jump Table -->
+      <div class="table-responsive">
+        <table class="table table-alt-row table-bordered table-hover">
           <thead>
             <tr>
               <th>Patient Name</th>
@@ -183,24 +185,22 @@
           <tbody>
             <tr>
               <td data-title="Patient Name">
-                <div class="table-content">
-                  <img
-                    class="patient-image"
-                    src="../images/mehcat-nbg.png"
-                    alt="mehcat"
-                  />
-                  <div class="name-id-container">
-                    <div class="name">Meh Cat</div>
-                    <div class="id">ID: 123456</div>
+                <div class="patient-name container flex gap-16">
+                  <img src="../images/mehcat-nbg.png" alt="mehcat" />
+                  <div class="container flex flex-column gap-8 m-0 p-0 w-auto">
+                    <div>Meh Cat</div>
+                    <div class="text-12-muted">ID: 123456</div>
                   </div>
                   <div class="vip-badge">VIP</div>
                 </div>
               </td>
               <td data-title="Contact">
-                <div class="table-content"><a href="">+6 0123456789</a></div>
+                <div class="container flex gap-16">
+                  <a href="">+6 0123456789</a>
+                </div>
               </td>
               <td data-title="Nationality">
-                <div class="table-content">
+                <div class="container flex gap-16">
                   <img
                     class="flag"
                     src="../images/malaysia.png"
@@ -210,40 +210,37 @@
                 </div>
               </td>
               <td data-title="Datetime">
-                <div class="table-content">
-                  <p>2023-10-01</p>
+                <div class="container flex gap-16">
+                  <time>04 05 2025</time>
+                  <time>08:08 PM</time>
                 </div>
               </td>
               <td data-title="Action">
-                <div class="table-content">
-                  <div class="action-button">
-                    <a href="#">
-                      <i class="bx bx-dots-horizontal-rounded"></i>
-                    </a>
-                  </div>
+                <div class="container flex gap-16">
+                  <a href="#">
+                    <i class="bx bx-dots-horizontal-rounded"></i>
+                  </a>
                 </div>
               </td>
             </tr>
             <tr>
               <td data-title="Patient Name">
-                <div class="table-content">
-                  <img
-                    class="patient-image"
-                    src="../images/mehcat-nbg.png"
-                    alt="mehcat"
-                  />
-                  <div class="name-id-container">
-                    <div class="name">Meh Cat</div>
-                    <div class="id">ID: 123456</div>
+                <div class="patient-name container flex gap-16">
+                  <img src="../images/mehcat-nbg.png" alt="mehcat" />
+                  <div class="container flex flex-column gap-8 m-0 p-0 w-auto">
+                    <div>Meh Cat</div>
+                    <div class="text-12-muted">ID: 123456</div>
                   </div>
                   <div class="vip-badge">VIP</div>
                 </div>
               </td>
               <td data-title="Contact">
-                <div class="table-content"><a href="">+6 0123456789</a></div>
+                <div class="container flex gap-16">
+                  <a href="">+6 0123456789</a>
+                </div>
               </td>
               <td data-title="Nationality">
-                <div class="table-content">
+                <div class="container flex gap-16">
                   <img
                     class="flag"
                     src="../images/malaysia.png"
@@ -253,40 +250,37 @@
                 </div>
               </td>
               <td data-title="Datetime">
-                <div class="table-content">
-                  <p>2023-10-01</p>
+                <div class="container flex gap-16">
+                  <time>04 05 2025</time>
+                  <time>08:08 PM</time>
                 </div>
               </td>
               <td data-title="Action">
-                <div class="table-content">
-                  <div class="action-button">
-                    <a href="#">
-                      <i class="bx bx-dots-horizontal-rounded"></i>
-                    </a>
-                  </div>
+                <div class="container flex gap-16">
+                  <a href="#">
+                    <i class="bx bx-dots-horizontal-rounded"></i>
+                  </a>
                 </div>
               </td>
             </tr>
             <tr>
               <td data-title="Patient Name">
-                <div class="table-content">
-                  <img
-                    class="patient-image"
-                    src="../images/mehcat-nbg.png"
-                    alt="mehcat"
-                  />
-                  <div class="name-id-container">
-                    <div class="name">Meh Cat</div>
-                    <div class="id">ID: 123456</div>
+                <div class="patient-name container flex gap-16">
+                  <img src="../images/mehcat-nbg.png" alt="mehcat" />
+                  <div class="container flex flex-column gap-8 m-0 p-0 w-auto">
+                    <div>Meh Cat</div>
+                    <div class="text-12-muted">ID: 123456</div>
                   </div>
                   <div class="vip-badge">VIP</div>
                 </div>
               </td>
               <td data-title="Contact">
-                <div class="table-content"><a href="">+6 0123456789</a></div>
+                <div class="container flex gap-16">
+                  <a href="">+6 0123456789</a>
+                </div>
               </td>
               <td data-title="Nationality">
-                <div class="table-content">
+                <div class="container flex gap-16">
                   <img
                     class="flag"
                     src="../images/malaysia.png"
@@ -296,40 +290,37 @@
                 </div>
               </td>
               <td data-title="Datetime">
-                <div class="table-content">
-                  <p>2023-10-01</p>
+                <div class="container flex gap-16">
+                  <time>04 05 2025</time>
+                  <time>08:08 PM</time>
                 </div>
               </td>
               <td data-title="Action">
-                <div class="table-content">
-                  <div class="action-button">
-                    <a href="#">
-                      <i class="bx bx-dots-horizontal-rounded"></i>
-                    </a>
-                  </div>
+                <div class="container flex gap-16">
+                  <a href="#">
+                    <i class="bx bx-dots-horizontal-rounded"></i>
+                  </a>
                 </div>
               </td>
             </tr>
             <tr>
               <td data-title="Patient Name">
-                <div class="table-content">
-                  <img
-                    class="patient-image"
-                    src="../images/mehcat-nbg.png"
-                    alt="mehcat"
-                  />
-                  <div class="name-id-container">
-                    <div class="name">Meh Cat</div>
-                    <div class="id">ID: 123456</div>
+                <div class="patient-name container flex gap-16">
+                  <img src="../images/mehcat-nbg.png" alt="mehcat" />
+                  <div class="container flex flex-column gap-8 m-0 p-0 w-auto">
+                    <div>Meh Cat</div>
+                    <div class="text-12-muted">ID: 123456</div>
                   </div>
                   <div class="vip-badge">VIP</div>
                 </div>
               </td>
               <td data-title="Contact">
-                <div class="table-content"><a href="">+6 0123456789</a></div>
+                <div class="container flex gap-16">
+                  <a href="">+6 0123456789</a>
+                </div>
               </td>
               <td data-title="Nationality">
-                <div class="table-content">
+                <div class="container flex gap-16">
                   <img
                     class="flag"
                     src="../images/malaysia.png"
@@ -339,40 +330,37 @@
                 </div>
               </td>
               <td data-title="Datetime">
-                <div class="table-content">
-                  <p>2023-10-01</p>
+                <div class="container flex gap-16">
+                  <time>04 05 2025</time>
+                  <time>08:08 PM</time>
                 </div>
               </td>
               <td data-title="Action">
-                <div class="table-content">
-                  <div class="action-button">
-                    <a href="#">
-                      <i class="bx bx-dots-horizontal-rounded"></i>
-                    </a>
-                  </div>
+                <div class="container flex gap-16">
+                  <a href="#">
+                    <i class="bx bx-dots-horizontal-rounded"></i>
+                  </a>
                 </div>
               </td>
             </tr>
             <tr>
               <td data-title="Patient Name">
-                <div class="table-content">
-                  <img
-                    class="patient-image"
-                    src="../images/mehcat-nbg.png"
-                    alt="mehcat"
-                  />
-                  <div class="name-id-container">
-                    <div class="name">Meh Cat</div>
-                    <div class="id">ID: 123456</div>
+                <div class="patient-name container flex gap-16">
+                  <img src="../images/mehcat-nbg.png" alt="mehcat" />
+                  <div class="container flex flex-column gap-8 m-0 p-0 w-auto">
+                    <div>Meh Cat</div>
+                    <div class="text-12-muted">ID: 123456</div>
                   </div>
                   <div class="vip-badge">VIP</div>
                 </div>
               </td>
               <td data-title="Contact">
-                <div class="table-content"><a href="">+6 0123456789</a></div>
+                <div class="container flex gap-16">
+                  <a href="">+6 0123456789</a>
+                </div>
               </td>
               <td data-title="Nationality">
-                <div class="table-content">
+                <div class="container flex gap-16">
                   <img
                     class="flag"
                     src="../images/malaysia.png"
@@ -382,33 +370,35 @@
                 </div>
               </td>
               <td data-title="Datetime">
-                <div class="table-content">
-                  <p>2023-10-01</p>
+                <div class="container flex gap-16">
+                  <time>04 05 2025</time>
+                  <time>08:08 PM</time>
                 </div>
               </td>
               <td data-title="Action">
-                <div class="table-content">
-                  <div class="action-button">
-                    <a href="#">
-                      <i class="bx bx-dots-horizontal-rounded"></i>
-                    </a>
-                  </div>
+                <div class="container flex gap-16">
+                  <a href="#">
+                    <i class="bx bx-dots-horizontal-rounded"></i>
+                  </a>
                 </div>
               </td>
             </tr>
           </tbody>
         </table>
-        <div class="center">
-          <div class="pagination">
-            <a href="#">&laquo;</a>
-            <a href="#">1</a>
-            <a href="#" class="active">2</a>
-            <a href="#">3</a>
-            <a href="#">&raquo;</a>
-          </div>
-          <div class="piganation-results"><p>Showing 10 of 15 results</p></div>
-        </div>
       </div>
+
+      <div class="container flex flex-column gap-8">
+        <div class="pagination">
+          <button class="btn-secondary" href="#">&laquo;</button>
+          <button class="btn-secondary" href="#">1</button>
+          <button class="btn-secondary active" href="#">2</button>
+          <button class="btn-secondary" href="#">3</button>
+          <button class="btn-secondary" href="#">&raquo;</button>
+        </div>
+        <p class="m-0">Showing 10 of 15 results</p>
+      </div>
+
+      <!-- Jump Slide-in RIght Panel -->
     </main>
     <script src="../js/script.js"></script>
   </body>
