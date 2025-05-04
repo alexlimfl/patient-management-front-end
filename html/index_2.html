@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patient Management</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/styles_2.css" />
+  </head>
+  <body class="sb-expanded">
+    <header class="container flex gap-8">
+      <div class="container flex flex-column">
+        <div class="title-text">患者管理</div>
+        <div class="subtitle-text">Patient Management</div>
+      </div>
+
+      <div class="container flex gap-8">
+        <div class="search-bar container flex">
+          <i class="bx bx-search"></i>
+          <input type="text" placeholder="Search" />
+        </div>
+        <button
+          href="#"
+          class="btn btn-secondary btn-tooltip"
+          data-tooltip="Add New Patient"
+        >
+          <i class="bx bx-plus-medical"></i>
+        </button>
+        <div class="user-image btn-tooltip" data-tooltip="Account">
+          <img src="../images/friescat.jpg" alt="User Profile" />
+        </div>
+      </div>
+    </header>
+
+    <aside class="side-bar">
+      <nav>
+        <ul class="flex flex-column gap-8">
+          <li>
+            <a
+              href="#"
+              class="side-bar-item container flex transition-fade"
+              data-tooltip="Menu"
+            >
+              <div class="flex gap-8">
+                <i class="bx bx-chevrons-right"></i>
+                <span>Menu</span>
+              </div>
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#"
+              class="side-bar-item container flex transition-fade"
+              data-tooltip="Dashboard"
+            >
+              <div class="flex gap-8">
+                <i class="bx bxs-dashboard"></i>
+                <span>Dashboard</span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="side-bar-item container flex transition-fade active"
+              data-tooltip="Patient"
+            >
+              <div class="flex gap-8">
+                <i class="bx bxs-user-detail"></i>
+                <span>Patient</span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="side-bar-item container flex transition-fade"
+              data-tooltip="Queue"
+            >
+              <div class="flex gap-8">
+                <i class="bx bxs-group"></i>
+                <span>Queue</span>
+                <span class="counter-badge">2</span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="side-bar-item container flex transition-fade"
+              data-tooltip="Consultation"
+            >
+              <div class="flex gap-8">
+                <i class="bx bxs-user-voice"></i>
+                <span>Consultation</span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="side-bar-item container flex transition-fade"
+              data-tooltip="Warehouse"
+            >
+              <div class="flex gap-8">
+                <i class="bx bxs-clinic"></i>
+                <span>Warehouse</span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="side-bar-item container flex transition-fade"
+              data-tooltip="Reports"
+            >
+              <div class="flex gap-8">
+                <i class="bx bxs-report"></i>
+                <span>Reports</span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="side-bar-item container flex transition-fade"
+              data-tooltip="Appointments"
+            >
+              <div class="flex gap-8">
+                <i class="bx bxs-group"></i>
+                <span>Appointments</span>
+                <span class="counter-badge">3</span>
+              </div>
+            </a>
+          </li>
+
+          <li>
+            <a
+              class="side-bar-item card container flex flex-column transition-fade"
+              data-tooltip="Update to Pro"
+            >
+              <i class="bx bxs-upvote"></i>
+              <button class="btn btn-primary">Update to Pro</button>
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#"
+              class="side-bar-item container flex transition-fade"
+              data-tooltip="Settings"
+            >
+              <div class="flex gap-8">
+                <i class="bx bxs-report"></i>
+                <span>Settings</span>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main>
+      <div class="table-container">
+        <div class="page-title">
+          <h3>Patient</h3>
+          <p></p>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Patient Name</th>
+              <th>Contact</th>
+              <th>Nationality</th>
+              <th>Datetime</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-title="Patient Name">
+                <div class="table-content">
+                  <img
+                    class="patient-image"
+                    src="../images/mehcat-nbg.png"
+                    alt="mehcat"
+                  />
+                  <div class="name-id-container">
+                    <div class="name">Meh Cat</div>
+                    <div class="id">ID: 123456</div>
+                  </div>
+                  <div class="vip-badge">VIP</div>
+                </div>
+              </td>
+              <td data-title="Contact">
+                <div class="table-content"><a href="">+6 0123456789</a></div>
+              </td>
+              <td data-title="Nationality">
+                <div class="table-content">
+                  <img
+                    class="flag"
+                    src="../images/malaysia.png"
+                    alt="Malaysia"
+                  />
+                  <p>Malaysia</p>
+                </div>
+              </td>
+              <td data-title="Datetime">
+                <div class="table-content">
+                  <p>2023-10-01</p>
+                </div>
+              </td>
+              <td data-title="Action">
+                <div class="table-content">
+                  <div class="action-button">
+                    <a href="#">
+                      <i class="bx bx-dots-horizontal-rounded"></i>
+                    </a>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td data-title="Patient Name">
+                <div class="table-content">
+                  <img
+                    class="patient-image"
+                    src="../images/mehcat-nbg.png"
+                    alt="mehcat"
+                  />
+                  <div class="name-id-container">
+                    <div class="name">Meh Cat</div>
+                    <div class="id">ID: 123456</div>
+                  </div>
+                  <div class="vip-badge">VIP</div>
+                </div>
+              </td>
+              <td data-title="Contact">
+                <div class="table-content"><a href="">+6 0123456789</a></div>
+              </td>
+              <td data-title="Nationality">
+                <div class="table-content">
+                  <img
+                    class="flag"
+                    src="../images/malaysia.png"
+                    alt="Malaysia"
+                  />
+                  <p>Malaysia</p>
+                </div>
+              </td>
+              <td data-title="Datetime">
+                <div class="table-content">
+                  <p>2023-10-01</p>
+                </div>
+              </td>
+              <td data-title="Action">
+                <div class="table-content">
+                  <div class="action-button">
+                    <a href="#">
+                      <i class="bx bx-dots-horizontal-rounded"></i>
+                    </a>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td data-title="Patient Name">
+                <div class="table-content">
+                  <img
+                    class="patient-image"
+                    src="../images/mehcat-nbg.png"
+                    alt="mehcat"
+                  />
+                  <div class="name-id-container">
+                    <div class="name">Meh Cat</div>
+                    <div class="id">ID: 123456</div>
+                  </div>
+                  <div class="vip-badge">VIP</div>
+                </div>
+              </td>
+              <td data-title="Contact">
+                <div class="table-content"><a href="">+6 0123456789</a></div>
+              </td>
+              <td data-title="Nationality">
+                <div class="table-content">
+                  <img
+                    class="flag"
+                    src="../images/malaysia.png"
+                    alt="Malaysia"
+                  />
+                  <p>Malaysia</p>
+                </div>
+              </td>
+              <td data-title="Datetime">
+                <div class="table-content">
+                  <p>2023-10-01</p>
+                </div>
+              </td>
+              <td data-title="Action">
+                <div class="table-content">
+                  <div class="action-button">
+                    <a href="#">
+                      <i class="bx bx-dots-horizontal-rounded"></i>
+                    </a>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td data-title="Patient Name">
+                <div class="table-content">
+                  <img
+                    class="patient-image"
+                    src="../images/mehcat-nbg.png"
+                    alt="mehcat"
+                  />
+                  <div class="name-id-container">
+                    <div class="name">Meh Cat</div>
+                    <div class="id">ID: 123456</div>
+                  </div>
+                  <div class="vip-badge">VIP</div>
+                </div>
+              </td>
+              <td data-title="Contact">
+                <div class="table-content"><a href="">+6 0123456789</a></div>
+              </td>
+              <td data-title="Nationality">
+                <div class="table-content">
+                  <img
+                    class="flag"
+                    src="../images/malaysia.png"
+                    alt="Malaysia"
+                  />
+                  <p>Malaysia</p>
+                </div>
+              </td>
+              <td data-title="Datetime">
+                <div class="table-content">
+                  <p>2023-10-01</p>
+                </div>
+              </td>
+              <td data-title="Action">
+                <div class="table-content">
+                  <div class="action-button">
+                    <a href="#">
+                      <i class="bx bx-dots-horizontal-rounded"></i>
+                    </a>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td data-title="Patient Name">
+                <div class="table-content">
+                  <img
+                    class="patient-image"
+                    src="../images/mehcat-nbg.png"
+                    alt="mehcat"
+                  />
+                  <div class="name-id-container">
+                    <div class="name">Meh Cat</div>
+                    <div class="id">ID: 123456</div>
+                  </div>
+                  <div class="vip-badge">VIP</div>
+                </div>
+              </td>
+              <td data-title="Contact">
+                <div class="table-content"><a href="">+6 0123456789</a></div>
+              </td>
+              <td data-title="Nationality">
+                <div class="table-content">
+                  <img
+                    class="flag"
+                    src="../images/malaysia.png"
+                    alt="Malaysia"
+                  />
+                  <p>Malaysia</p>
+                </div>
+              </td>
+              <td data-title="Datetime">
+                <div class="table-content">
+                  <p>2023-10-01</p>
+                </div>
+              </td>
+              <td data-title="Action">
+                <div class="table-content">
+                  <div class="action-button">
+                    <a href="#">
+                      <i class="bx bx-dots-horizontal-rounded"></i>
+                    </a>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="center">
+          <div class="pagination">
+            <a href="#">&laquo;</a>
+            <a href="#">1</a>
+            <a href="#" class="active">2</a>
+            <a href="#">3</a>
+            <a href="#">&raquo;</a>
+          </div>
+          <div class="piganation-results"><p>Showing 10 of 15 results</p></div>
+        </div>
+      </div>
+    </main>
+    <script src="../js/script.js"></script>
+  </body>
+</html>
