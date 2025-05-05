@@ -1,5 +1,6 @@
 :root {
     --sb-width: 80px;
+    --sb-width-expanded: 240px;
     --border--debug: 1px solid red;
 
     --primary-blue: #0052CC;
@@ -9,7 +10,6 @@
 * {
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
-    color: black;
     /* border: var(--border--debug); */
 }
 
@@ -20,6 +20,7 @@ html {
 body {
     margin: 0;
     padding: 0;
+    font-size: 14px;
     background-color: white;
 }
 
@@ -51,9 +52,17 @@ img {
     flex-direction: column;
 }
 
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
 .centered {
     display: block;
     align-content: center;
+}
+
+.justify-left {
+    justify-content: left;
 }
 
 /* Gap utils */
@@ -203,11 +212,11 @@ img {
 
 /* Transition utils */
 .transition-fade {
-    transition: background-color 0.3s ease;
+    transition: background-color 0.5s ease-in-out;
 }
 
 .transition-all {
-    transition: all 0.3s ease;
+    transition: all 0.5s ease-in-out;
 }
 
 
@@ -257,8 +266,19 @@ img {
 
 /* Side Bar -----------------------------------------------------------*/
 
+.side-bar {
+    width: var(--sb-width-expanded);
+    position: fixed;
+    inset: 0 auto 0 0;
+    overflow: hidden;
+}
+
+.side-bar li:nth-last-child(2) {
+    margin-top: auto;
+}
+
 .side-bar-item {
-    background: var(--primary-blue);
+    background: transparent;
     text-decoration: none;
     color: white;
     padding: 8px;
@@ -289,10 +309,44 @@ span {
     color: var(--primary-blue);
 }
 
+.side-bar nav {
+    height: 100%;
+}
+
 .side-bar ul {
     list-style: none;
     margin: 0;
     padding: 16px;
+    height: 100%;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.side-bar:has(#menu-cb:checked) {
+    width: 80px;
+}
+
+.side-bar:has(#menu-cb:checked) .side-bar-item .flex {
+    justify-content: center;
+    max-width: 48px;
+}
+
+.side-bar:has(#menu-cb:checked) .side-bar-item span:not(.counter-badge),
+.side-bar:has(#menu-cb:checked) .card button {
+    display: none;
+}
+
+.side-bar:has(#menu-cb:checked) .card {
+    background-color: transparent;
+    color: white;
+}
+
+.side-bar:has(#menu-cb:checked) .counter-badge {
+    position: fixed;
+    z-index: 0;
+    transform: scale(0.75) translateX(85%);
 }
 
 .counter-badge {
@@ -343,7 +397,12 @@ span {
     vertical-align: middle;
     text-align: center;
     border: 1px solid #E5E5E5;
+    font-weight: 500;
     background-color: var(--secondary-blue);
+}
+
+.table tbody td {
+    font-weight: 400;
 }
 
 .table-alt-row tbody tr:nth-child(even) {
@@ -377,11 +436,12 @@ span {
     border-radius: 50%;
 }
 
-.table .vip-badge {
+
+.vip-badge {
     background-color: #FFD700;
-    font-size: 12px;
+    font-size: 8px;
     font-weight: bold;
-    padding: 4px 8px;
+    padding: 2px 4px;
     border-radius: 25%;
 }
 
@@ -389,6 +449,8 @@ span {
     width: 32px;
     height: auto;
 }
+
+/* Patient Detail Panel -----------------------------------------------------------*/
 
 .pagination {
     display: flex;
@@ -406,4 +468,41 @@ span {
     color: white;
     font-weight: bold;
     background-color: var(--primary-blue);
+}
+
+
+.patient-detail-panel .patient-name img {
+    max-width: none;
+    height: 96px;
+    width: 96px;
+    border-radius: 7.5%;
+}
+
+.patient-detail-panel .patient-name .flag {
+    width: 32px;
+    height: auto;
+}
+
+.patient-detail-panel .bx {
+    font-size: 24px;
+    color: var(--primary-blue);
+}
+
+.patient-detail-panel .panel-items {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.patient-detail-panel .panel-items .container {
+    /* margin: 0 0 0 16px; */
+    margin: 0;
+}
+
+.flex-start {
+    align-items: flex-start;
+}
+
+.appointment-card {
+    width: 50%;
 }

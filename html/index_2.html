@@ -37,20 +37,21 @@
     </header>
 
     <!-- Jump Sidebar -->
-    <aside class="side-bar">
+    <aside class="side-bar transition-all">
       <nav>
         <ul class="flex flex-column gap-8">
           <li>
-            <a
-              href="#"
-              class="side-bar-item container flex transition-fade"
+            <input type="checkbox" id="menu-cb" hidden />
+            <label
+              class="side-bar-item container flex transition-fade cursor-pointer"
               data-tooltip="Menu"
+              for="menu-cb"
             >
               <div class="flex gap-8">
                 <i class="bx bx-chevrons-right"></i>
                 <span>Menu</span>
               </div>
-            </a>
+            </label>
           </li>
 
           <li>
@@ -133,7 +134,7 @@
               data-tooltip="Appointments"
             >
               <div class="flex gap-8">
-                <i class="bx bxs-group"></i>
+                <i class="bx bxs-calendar"></i>
                 <span>Appointments</span>
                 <span class="counter-badge">3</span>
               </div>
@@ -157,7 +158,7 @@
               data-tooltip="Settings"
             >
               <div class="flex gap-8">
-                <i class="bx bxs-report"></i>
+                <i class="bx bxs-cog"></i>
                 <span>Settings</span>
               </div>
             </a>
@@ -397,9 +398,80 @@
         </div>
         <p class="m-0">Showing 10 of 15 results</p>
       </div>
-
-      <!-- Jump Slide-in RIght Panel -->
     </main>
+    <!-- Jump Slide-in Right Panel -->
+    <aside class="patient-detail-panel">
+      <div class="container flex flex-column gap-8">
+        <div class="container flex text-16-b">Detail</div>
+        <div class="patient-name container flex gap-16">
+          <img src="../images/mehcat-nbg.png" alt="mehcat" />
+          <div class="container flex flex-column justify-left m-0 gap-8 w-auto">
+            <div>Meh Cat</div>
+            <div class="text-12-muted">ID: 123456</div>
+            <div class="vip-badge">VIP</div>
+            <div class="container m-0 p-0 flex gap-8">
+              <img class="flag" src="../images/malaysia.png" alt="Malaysia" />
+              <span>Malaysia</span>
+            </div>
+          </div>
+        </div>
+        <div class="panel-items gap-8">
+          <div class="container flex gap-16 w-auto">
+            <i class="bx bxs-phone"></i>
+            <a href="#">+6 0123456789</a>
+          </div>
+          <div class="container flex gap-16 w-auto">
+            <i class="bx bxs-envelope"></i>
+            <a href="#">mehcat@gmail.com</a>
+          </div>
+          <div class="container flex gap-16 w-auto">
+            <i class="bx bxs-cake"></i>
+            <time>01-04-2020</time>
+            <span>5 y/o</span>
+          </div>
+
+          <div class="container flex gap-16 w-auto">
+            <i class="bx bx-id-card"></i>
+            <span>200401-14-1111</span>
+            <span>NRIC</span>
+          </div>
+
+          <div class="container flex gap-16 w-auto">
+            <i class="bx bxs-briefcase"></i>
+            <span>Life guard</span>
+          </div>
+          <div class="container flex gap-16 w-auto">
+            <i class="bx bxs-calendar-edit"></i>
+            <time>31-01-2025</time>
+            <span>4 months ago</span>
+          </div>
+          <div class="container flex gap-16 w-auto">
+            <i class="bx bxs-edit"></i>
+            <div>Allegic to shellfish</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Jump Appointment Card -->
+      <div class="appointment-card container flex flex-column gap-8">
+        <div class="container flex gap-8 justify-left">
+          <time>01-06-2025</time>
+          <time class="text-16-b">10:00 AM</time>
+        </div>
+        <div class="container flex gap-8 justify-left">
+          <span>Treatment</span>
+          <span class="text-16-b">Physical Therapy</span>
+        </div>
+        <div class="container flex gap-8 justify-left">
+          <span>Assigned doctor</span>
+          <span class="text-16-b">Dr. Jane Doe</span>
+        </div>
+        <div class="container flex gap-8 justify-left">
+          <span>Status / Symptoms</span>
+          <span>Backpain, unable to walk.</span>
+        </div>
+      </div>
+    </aside>
     <script src="../js/script.js"></script>
   </body>
 </html>
