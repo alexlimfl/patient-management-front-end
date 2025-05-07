@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../css/styles_2.css" />
   </head>
   <body class="sb-expanded">
-    <!-- Jump Navbar -->
+    <!-- Navbar -->
     <header class="container flex gap-8">
       <div class="container flex flex-column">
         <div class="title-text">患者管理</div>
@@ -36,14 +36,14 @@
       </div>
     </header>
 
-    <!-- Jump Sidebar -->
-    <aside class="side-bar transition-all">
+    <!-- Sidebar -->
+    <aside class="side-bar">
       <nav>
         <ul class="flex flex-column gap-8">
           <li>
             <input type="checkbox" id="menu-cb" hidden />
             <label
-              class="side-bar-item container flex transition-fade cursor-pointer"
+              class="side-bar-item container flex cursor-pointer"
               data-tooltip="Menu"
               for="menu-cb"
             >
@@ -57,7 +57,7 @@
           <li>
             <a
               href="#"
-              class="side-bar-item container flex transition-fade"
+              class="side-bar-item container flex"
               data-tooltip="Dashboard"
             >
               <div class="flex gap-8">
@@ -69,7 +69,7 @@
           <li>
             <a
               href="#"
-              class="side-bar-item container flex transition-fade active"
+              class="side-bar-item container flex active"
               data-tooltip="Patient"
             >
               <div class="flex gap-8">
@@ -81,7 +81,7 @@
           <li>
             <a
               href="#"
-              class="side-bar-item container flex transition-fade"
+              class="side-bar-item container flex"
               data-tooltip="Queue"
             >
               <div class="flex gap-8">
@@ -94,7 +94,7 @@
           <li>
             <a
               href="#"
-              class="side-bar-item container flex transition-fade"
+              class="side-bar-item container flex"
               data-tooltip="Consultation"
             >
               <div class="flex gap-8">
@@ -106,7 +106,7 @@
           <li>
             <a
               href="#"
-              class="side-bar-item container flex transition-fade"
+              class="side-bar-item container flex"
               data-tooltip="Warehouse"
             >
               <div class="flex gap-8">
@@ -118,7 +118,7 @@
           <li>
             <a
               href="#"
-              class="side-bar-item container flex transition-fade"
+              class="side-bar-item container flex"
               data-tooltip="Reports"
             >
               <div class="flex gap-8">
@@ -130,7 +130,7 @@
           <li>
             <a
               href="#"
-              class="side-bar-item container flex transition-fade"
+              class="side-bar-item container flex"
               data-tooltip="Appointments"
             >
               <div class="flex gap-8">
@@ -143,7 +143,7 @@
 
           <li>
             <a
-              class="side-bar-item card container flex flex-column transition-fade"
+              class="side-bar-item card container flex flex-column"
               data-tooltip="Update to Pro"
             >
               <i class="bx bxs-upvote"></i>
@@ -154,7 +154,7 @@
           <li>
             <a
               href="#"
-              class="side-bar-item container flex transition-fade"
+              class="side-bar-item container flex"
               data-tooltip="Settings"
             >
               <div class="flex gap-8">
@@ -167,11 +167,13 @@
       </nav>
     </aside>
 
-    <!-- Jump Main -->
+    <!-- Main -->
     <main class="container flex flex-column gap-8">
+      <div class="overlay"></div>
+
       <div class="container flex text-16-b">Patient</div>
 
-      <!-- Jump Table -->
+      <!-- Table -->
       <div class="table-responsive">
         <table class="table table-alt-row table-bordered table-hover">
           <thead>
@@ -184,8 +186,9 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
+            <tr class="data-row">
               <td data-title="Patient Name">
+                <a href="#meh-cat-detail" class="click-overlay"></a>
                 <div class="patient-name container flex gap-16">
                   <img src="../images/mehcat-nbg.png" alt="mehcat" />
                   <div class="container flex flex-column gap-8 m-0 p-0 w-auto">
@@ -398,9 +401,37 @@
         </div>
         <p class="m-0">Showing 10 of 15 results</p>
       </div>
+
+      <!-- Appointment Card -->
+      <div class="container flex text-16-b">Appointment</div>
+      <div class="appointment-card">
+        <div class="image-app">
+          <img src="../images/mehcat-nbg.png" alt="mehcat" />
+        </div>
+        <div class="time-app">
+          <time>01-06-2025</time>
+          <time>10:00 AM</time>
+        </div>
+        <div class="title-app">
+          <span class="name-app">Meh Cat</span>
+          <span class="id-app">ID: 123456</span>
+          <span class="vip-badge">VIP</span>
+        </div>
+        <div class="line-app">
+          <span class="key-app">Treatment</span>
+          <span class="value-app">Physical Therapy</span>
+        </div>
+        <span>Assigned doctor</span>
+        <span>Dr. Jane Doe</span>
+        <span>Status / Symptoms</span>
+        <span>Backpain, unable to walk.</span>
+      </div>
     </main>
-    <!-- Jump Slide-in Right Panel -->
-    <aside class="patient-detail-panel">
+    <!-- Slide-in Right Panel -->
+    <aside id="meh-cat-detail" class="patient-detail-panel">
+      <a href="#" class="close-panel btn btn-close">
+        <i class="bx bx-window-close"></i>
+      </a>
       <div class="container flex flex-column gap-8">
         <div class="container flex text-16-b">Detail</div>
         <div class="patient-name container flex gap-16">
@@ -415,7 +446,7 @@
             </div>
           </div>
         </div>
-        <div class="panel-items gap-8">
+        <div class="panel-items">
           <div class="container flex gap-16 w-auto">
             <i class="bx bxs-phone"></i>
             <a href="#">+6 0123456789</a>
@@ -451,27 +482,8 @@
           </div>
         </div>
       </div>
-
-      <!-- Jump Appointment Card -->
-      <div class="appointment-card container flex flex-column gap-8">
-        <div class="container flex gap-8 justify-left">
-          <time>01-06-2025</time>
-          <time class="text-16-b">10:00 AM</time>
-        </div>
-        <div class="container flex gap-8 justify-left">
-          <span>Treatment</span>
-          <span class="text-16-b">Physical Therapy</span>
-        </div>
-        <div class="container flex gap-8 justify-left">
-          <span>Assigned doctor</span>
-          <span class="text-16-b">Dr. Jane Doe</span>
-        </div>
-        <div class="container flex gap-8 justify-left">
-          <span>Status / Symptoms</span>
-          <span>Backpain, unable to walk.</span>
-        </div>
-      </div>
     </aside>
+
     <script src="../js/script.js"></script>
   </body>
 </html>

@@ -10,7 +10,7 @@
 * {
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
-    /* border: var(--border--debug); */
+    border: var(--border--debug);
 }
 
 html {
@@ -26,7 +26,8 @@ body {
 
 img {
     display: block;
-    max-width: 48px;
+    /* max-width: 48px; */
+    width: 48px;
     height: auto;
 }
 
@@ -156,7 +157,7 @@ img {
     text-decoration: none;
     font-size: inherit;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease-in-out;
 }
 
 .btn i {
@@ -174,9 +175,19 @@ img {
     border-color: blue;
 }
 
+.btn-close {
+    background-color: transparent;
+    color: black;
+}
+
 .btn-primary:hover,
 .btn-secondary:hover {
     background-color: gray;
+}
+
+.btn-close:hover {
+    color: white;
+    background-color: red;
 }
 
 .btn-tooltip {
@@ -267,10 +278,13 @@ img {
 /* Side Bar -----------------------------------------------------------*/
 
 .side-bar {
+    display: none;
     width: var(--sb-width-expanded);
     position: fixed;
     inset: 0 auto 0 0;
     overflow: hidden;
+    transition: width 0.3s ease-in-out;
+
 }
 
 .side-bar li:nth-last-child(2) {
@@ -296,28 +310,42 @@ span {
 
 .side-bar-item i {
     font-size: 24px;
+    transition: all 0.3s ease-in-out;
+
 }
 
 .side-bar-item span {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
+}
+
+.side-bar-item span:not(.counter-badge) {
+    opacity: 1;
+    visibility: visible;
+    overflow: hidden;
+    transition:
+        opacity 0.3s ease-in-out,
+        visibility 0.3s ease-in-out;
 }
 
 .side-bar-item:hover,
 .side-bar-item.active {
     background: var(--secondary-blue);
     color: var(--primary-blue);
+
 }
 
 .side-bar nav {
     height: 100%;
+
 }
 
 .side-bar ul {
     list-style: none;
     margin: 0;
     padding: 16px;
-    height: 100%;
+    min-height: 100%;
+
 }
 
 .cursor-pointer {
@@ -329,13 +357,22 @@ span {
 }
 
 .side-bar:has(#menu-cb:checked) .side-bar-item .flex {
-    justify-content: center;
-    max-width: 48px;
+    /* justify-content: center; */
+    width: 48px;
+}
+
+.side-bar:has(#menu-cb:checked) .side-bar-item i:not(.bxs-upvote) {
+    margin-left: calc(41.6px / 2 - 12px);
+    /* transform: translateX(calc(41.6px / 2 - 12px)); */
 }
 
 .side-bar:has(#menu-cb:checked) .side-bar-item span:not(.counter-badge),
 .side-bar:has(#menu-cb:checked) .card button {
-    display: none;
+    position: fixed;
+    opacity: 0;
+    visibility: hidden;
+    max-width: 0;
+    overflow: hidden;
 }
 
 .side-bar:has(#menu-cb:checked) .card {
@@ -344,9 +381,15 @@ span {
 }
 
 .side-bar:has(#menu-cb:checked) .counter-badge {
-    position: fixed;
-    z-index: 0;
-    transform: scale(0.75) translateX(85%);
+    transform: translateX(calc(-194.4px + 57.6px)) scale(0.75);
+}
+
+.side-bar:has(#menu-cb:checked) .bx-chevrons-right {
+    transform: rotate(0deg) translateX(0%);
+}
+
+.side-bar .bx-chevrons-right {
+    transform: rotate(-180deg) translateX(0%);
 }
 
 .counter-badge {
@@ -354,16 +397,22 @@ span {
     color: var(--primary-blue);
     width: 24px;
     height: 24px;
-    background: white;
+    background: #FFD700;
     border-radius: 50%;
     line-height: 24px;
-    margin-left: auto;
+    /* margin-left: auto; */
+    position: fixed;
+    /* left: calc(((240px - 194.4px) / 2) + 8px); */
+    left: calc(240px - (240px - 194.4px) - 12px);
+    transition: transform 0.3s ease-in-out;
 }
 
 .side-bar-item .flex {
     color: inherit;
     width: calc(4px * 50);
     justify-content: left;
+    transition: all 0.3s ease-in-out;
+
 }
 
 .side-bar-item.card {
@@ -376,6 +425,7 @@ span {
 
 .side-bar {
     background-color: var(--primary-blue);
+
 }
 
 /*Table -----------------------------------------------------------*/
@@ -433,11 +483,12 @@ span {
 
 .table .patient-name img {
     height: 48px;
-    border-radius: 50%;
+    border-radius: 15%;
 }
 
 
 .vip-badge {
+    max-width: 24px;
     background-color: #FFD700;
     font-size: 8px;
     font-weight: bold;
@@ -450,7 +501,7 @@ span {
     height: auto;
 }
 
-/* Patient Detail Panel -----------------------------------------------------------*/
+/* Pagination -----------------------------------------------------------*/
 
 .pagination {
     display: flex;
@@ -462,6 +513,7 @@ span {
 .pagination .btn-secondary {
     padding: 4px 8px;
     border-radius: 4px;
+    cursor: pointer;
 }
 
 .pagination .btn-secondary.active {
@@ -470,6 +522,59 @@ span {
     background-color: var(--primary-blue);
 }
 
+/* Patient Detail Panel -----------------------------------------------------------*/
+
+.patient-detail-panel {
+    position: fixed;
+    inset: 128px 0 0 auto;
+    width: 360px;
+    height: calc(100vh - (16px * 2) - 128px);
+    background-color: white;
+    /* border: 4px solid var(--secondary-blue); */
+    outline: 4px solid var(--secondary-blue);
+    border-radius: 16px 0 0 16px;
+    overflow: auto;
+    z-index: 48;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* main {
+    position: relative;
+} */
+
+.patient-detail-panel:target {
+    transform: translateX(0%);
+}
+
+body:has(.patient-detail-panel:target) main .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.25);
+    transition: background 0.3s ease-in-out;
+    cursor: default;
+    pointer-events: none;
+    z-index: 24;
+}
+
+.close-panel {
+    position: sticky;
+    inset: 0 auto auto 0;
+    font-size: 24px;
+    border-radius: 16px 0 16px 0;
+}
+
+.data-row {
+    position: relative;
+}
+
+.click-overlay {
+    position: absolute;
+    inset: 0 auto auto 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
 
 .patient-detail-panel .patient-name img {
     max-width: none;
@@ -483,7 +588,7 @@ span {
     height: auto;
 }
 
-.patient-detail-panel .bx {
+.panel-items .bx {
     font-size: 24px;
     color: var(--primary-blue);
 }
@@ -503,6 +608,31 @@ span {
     align-items: flex-start;
 }
 
-.appointment-card {
-    width: 50%;
+
+
+.image-app img {
+    width: 72px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
+
+.title-app {
+    display: flex;
+    flex-direction: column;
+}
+
+.title-app .name-app {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--primary-blue);
+}
+
+.title-app .id-app {
+    font-size: 12px;
+    font-weight: regular;
+    color: var(--primary-blue);
+}
+
+.title-app .vip-badge {
+    max-width: 24px;
 }
