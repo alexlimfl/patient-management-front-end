@@ -10,7 +10,7 @@
 * {
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
-    border: var(--border--debug);
+    /* border: var(--border--debug); */
 }
 
 html {
@@ -66,6 +66,30 @@ img {
     justify-content: left;
 }
 
+.justify-center {
+    justify-content: center;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+/* Border utils */
+.border-bottom {
+    border-bottom: 1px solid black;
+}
+
+hr.new1 {
+    border-top: 1px solid var(--primary-blue);
+    width: 100%;
+    margin: 8px 0px
+}
+
+margin-top-bottom-8 {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
 /* Gap utils */
 .gap-8 {
     gap: 8px;
@@ -77,6 +101,10 @@ img {
 
 .gap-16 {
     gap: 16px;
+}
+
+.gap-24 {
+    gap: 24px;
 }
 
 /* Margin utils */
@@ -278,12 +306,13 @@ img {
 /* Side Bar -----------------------------------------------------------*/
 
 .side-bar {
-    display: none;
+    /* display: none; */
     width: var(--sb-width-expanded);
     position: fixed;
     inset: 0 auto 0 0;
     overflow: hidden;
     transition: width 0.3s ease-in-out;
+    z-index: 32;
 
 }
 
@@ -428,6 +457,12 @@ span {
 
 }
 
+/* Main -----------------------------------------------------------*/
+.main-con {
+    /* position: relative; */
+    padding: 0 16px;
+}
+
 /*Table -----------------------------------------------------------*/
 
 .table {
@@ -534,28 +569,25 @@ span {
     outline: 4px solid var(--secondary-blue);
     border-radius: 16px 0 0 16px;
     overflow: auto;
-    z-index: 48;
+    z-index: 32;
     transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
 }
 
-/* main {
-    position: relative;
-} */
-
 .patient-detail-panel:target {
+    box-shadow: -4px 4px 8px gray;
     transform: translateX(0%);
 }
 
-body:has(.patient-detail-panel:target) main .overlay {
+/* body:has(.patient-detail-panel:target) main .overlay {
     position: absolute;
     inset: 0;
     background: rgba(0, 0, 0, 0.25);
     transition: background 0.3s ease-in-out;
     cursor: default;
     pointer-events: none;
-    z-index: 24;
-}
+    z-index: 16;
+} */
 
 .close-panel {
     position: sticky;
@@ -608,17 +640,48 @@ body:has(.patient-detail-panel:target) main .overlay {
     align-items: flex-start;
 }
 
+.appointment-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 16px;
+    background-color: var(--secondary-blue);
+    width: 30%;
+    min-width: 240px
+}
 
+.detail-app {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
 
 .image-app img {
     width: 72px;
     aspect-ratio: 1;
-    border-radius: 50%;
+    border-radius: 5px;
+}
+
+.flex-end {
+    align-items: flex-end;
+}
+
+.top-app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 8px;
+    /* width: 50%; */
 }
 
 .title-app {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    width: 72px;
+    aspect-ratio: 1;
 }
 
 .title-app .name-app {
@@ -636,3 +699,70 @@ body:has(.patient-detail-panel:target) main .overlay {
 .title-app .vip-badge {
     max-width: 24px;
 }
+
+.title-app img.vip-badge {
+    background-color: transparent;
+}
+
+.line-app {
+    display: flex;
+    width: 100%;
+    border-radius: 4px;
+    background-color: var(--primary-blue);
+    overflow: hidden;
+    font-size: 10px;
+    /* line-height: 1.5; */
+
+}
+
+.line-app .key-app {
+    text-align: center;
+    width: 30%;
+    padding: 8px 8px;
+    background-color: hsl(220, 100%, 60%);
+    color: white;
+    border-radius: 4px;
+
+}
+
+/* .detail-app .line-app:last-child {
+    height: calc(3lh + 8px);
+} */
+
+.line-app .value-app {
+    width: 70%;
+    padding: 8px 8px;
+    background-color: var(--primary-blue);
+    color: white;
+}
+
+
+.time-app time {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--primary-blue);
+}
+
+.appointment-card-con {
+    width: 100%;
+    overflow: auto;
+    height: 40vh;
+    gap: 32px;
+    padding: 16px 16px;
+    border: #0052CC 1px solid;
+    border-radius: 16px;
+
+}
+
+/* Media Queries -----------------------------------------------------------*/
+
+/*
+    Desktop (1200px+)
+    Full layout
+
+    Tablet (768–1199px)
+    Sidebar collapsible, horizontal scroll
+
+    Mobile (<768px)
+    Icons-only sidebar, responsive table
+*/
