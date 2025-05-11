@@ -1,12 +1,3 @@
-// Sidebar toggle
-const resizeButton = document.querySelector("[data-resize-button]");
-
-resizeButton.addEventListener("click", (e) => {
-  e.preventDefault();
-  document.body.classList.toggle("sb-expanded");
-});
-
-// Responsive sidebar
 /*
     Desktop (1200px+)
     Full layout
@@ -18,13 +9,18 @@ resizeButton.addEventListener("click", (e) => {
     Icons-only sidebar, responsive table
 */
 
-let body = document.body;
+function toggleSidebarCheckbox() {
+  const sidebarCheckbox = document.getElementById("sidebar-checkbox");
+  const width = window.innerWidth;
 
-function updateBody() {
-  if (window.innerWidth >= 1200) {
-    body.classList.add("sb-expanded");
-  } else body.classList.remove("sb-expanded");
+  if (width < 768) {
+    sidebarCheckbox.checked = true;
+    console.log("Mobile view");
+  } else if (width >= 1200) {
+    sidebarCheckbox.checked = false;
+    console.log("Desktop view");
+  }
 }
 
-window.addEventListener("resize", updateBody);
-window.addEventListener("DOMContentLoaded", updateBody);
+window.addEventListener("DOMContentLoaded", toggleSidebarCheckbox);
+window.addEventListener("resize", toggleSidebarCheckbox);
