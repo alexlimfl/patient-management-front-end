@@ -5,128 +5,180 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Patient Management</title>
     <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
     />
-
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" /> -->
     <link rel="stylesheet" href="../css/styles.css" />
+    <link
+      rel="icon"
+      href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_R_yXNKqVkZkUW6c4lOkwIxSi2nurpSeDGQ&s"
+    />
   </head>
   <body class="sb-expanded">
-    <header>
-      <div class="title-search-container">
-        <div class="title">
-          <h1>患者管理</h1>
-          <h2>Patient Management</h2>
-        </div>
-        <div class="search-container">
-          <div class="search-bar">
-            <i class="bx bx-search"></i>
-            <input type="text" placeholder="Search" />
-          </div>
-          <div class="add-new-button">
-            <a href="#">
-              <i class="bx bx-plus-medical"></i>
-            </a>
-            <span class="tooltip">Add new patient</span>
-          </div>
-        </div>
+    <!-- Navbar -->
+    <header class="container flex gap-8">
+      <div class="container flex flex-column">
+        <div class="title-text">患者管理</div>
+        <div class="subtitle-text">Patient Management</div>
       </div>
 
-      <div class="user-profile">
-        <h3>Alex Lim</h3>
-        <img src="../images/friescat.jpg" alt="User Profile" />
+      <div class="container flex gap-8">
+        <div class="search-bar container flex">
+          <i class="bx bx-search"></i>
+          <input type="text" placeholder="Search" />
+        </div>
+        <button
+          href="#"
+          class="btn btn-secondary btn-tooltip"
+          data-tooltip="Add New Patient"
+        >
+          <i class="bx bx-plus-medical"></i>
+        </button>
+        <div class="user-image btn-tooltip" data-tooltip="Account">
+          <img src="../images/friescat.jpg" alt="User Profile" />
+        </div>
       </div>
     </header>
 
-    <aside>
+    <!-- Sidebar -->
+    <aside class="sidebar">
       <nav>
-        <ul>
+        <ul class="flex flex-column gap-8">
           <li>
-            <a href="#" data-resize-button>
-              <i class="bx bx-chevrons-right"></i>
-              <span class="nav-item">Menu</span>
-            </a>
-            <span class="tooltip">Menu</span>
-          </li>
-          <li>
-            <a href="#">
-              <i class="bx bxs-dashboard"></i>
-              <span class="nav-item">Dashboard</span>
-            </a>
-            <span class="tooltip">Dashboard</span>
-          </li>
-          <li>
-            <a href="#" class="active">
-              <i class="bx bxs-user-detail"></i>
-              <span class="nav-item">Patient</span>
-            </a>
-            <span class="tooltip">Patient</span>
-          </li>
-          <li>
-            <a href="#">
-              <i class="bx bxs-group"></i>
-              <span class="nav-item">Queue</span>
-              <span class="badge">2</span>
-            </a>
-            <span class="tooltip">Queue</span>
-          </li>
-          <li>
-            <a href="#">
-              <i class="bx bx-user-voice"></i>
-              <span class="nav-item">Consultation</span>
-            </a>
-            <span class="tooltip">Consultation</span>
-          </li>
-          <li>
-            <a href="#">
-              <i class="bx bxs-clinic"></i>
-              <span class="nav-item">Warehouse</span>
-            </a>
-            <span class="tooltip">Warehouse</span>
-          </li>
-          <li>
-            <a href="#">
-              <i class="bx bxs-report"></i>
-              <span class="nav-item">Reports</span>
-            </a>
-            <span class="tooltip">Reports</span>
-          </li>
-          <li>
-            <a href="#">
-              <i class="bx bxs-calendar"></i>
-              <span class="nav-item">Appointments</span>
-              <span class="badge">3</span>
-            </a>
-            <span class="tooltip">Appointments</span>
+            <input type="checkbox" id="sidebar-checkbox" hidden />
+            <label
+              class="sidebar-item container flex cursor-pointer menu-sidebar btn-tooltip"
+              data-tooltip="Menu"
+              for="sidebar-checkbox"
+            >
+              <div class="flex gap-8">
+                <i class="bx bx-chevrons-right"></i>
+                <span>Menu</span>
+              </div>
+            </label>
           </li>
 
           <li>
-            <a href="#" class="update-to-pro">
+            <a
+              href="#"
+              class="sidebar-item container flex btn-tooltip"
+              data-tooltip="Dashboard"
+            >
+              <div class="flex gap-8">
+                <i class="bx bxs-dashboard"></i>
+                <span>Dashboard</span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="sidebar-item container flex active btn-tooltip"
+              data-tooltip="Patient"
+            >
+              <div class="flex gap-8">
+                <i class="bx bxs-user-detail"></i>
+                <span>Patient</span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="sidebar-item container flex btn-tooltip"
+              data-tooltip="Queue"
+            >
+              <div class="flex gap-8">
+                <i class="bx bxs-group"></i>
+                <span>Queue</span>
+                <span class="counter-badge">2</span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="sidebar-item container flex btn-tooltip"
+              data-tooltip="Consultation"
+            >
+              <div class="flex gap-8">
+                <i class="bx bxs-user-voice"></i>
+                <span>Consultation</span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="sidebar-item container flex btn-tooltip"
+              data-tooltip="Warehouse"
+            >
+              <div class="flex gap-8">
+                <i class="bx bxs-clinic"></i>
+                <span>Warehouse</span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="sidebar-item container flex btn-tooltip"
+              data-tooltip="Reports"
+            >
+              <div class="flex gap-8">
+                <i class="bx bxs-report"></i>
+                <span>Reports</span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="sidebar-item container flex btn-tooltip"
+              data-tooltip="Appointments"
+            >
+              <div class="flex gap-8">
+                <i class="bx bxs-calendar"></i>
+                <span>Appointments</span>
+                <span class="counter-badge">3</span>
+              </div>
+            </a>
+          </li>
+
+          <li>
+            <a
+              class="sidebar-item card container flex flex-column btn-tooltip"
+              data-tooltip="Update to Pro"
+            >
               <i class="bx bxs-upvote"></i>
-              <button>Update to Pro</button>
+              <button class="btn btn-primary">Update to Pro</button>
             </a>
-            <span class="tooltip">Update to Pro</span>
           </li>
 
           <li>
-            <a href="#">
-              <i class="bx bx-cog"></i>
-              <span class="nav-item">Settings</span>
+            <a
+              href="#"
+              class="sidebar-item container flex btn-tooltip"
+              data-tooltip="Settings"
+            >
+              <div class="flex gap-8">
+                <i class="bx bxs-cog"></i>
+                <span>Settings</span>
+              </div>
             </a>
-            <span class="tooltip">Settings</span>
           </li>
         </ul>
       </nav>
     </aside>
 
-    <main>
-      <div class="table-container">
-        <div class="page-title">
-          <h3>Patient</h3>
-          <p></p>
-        </div>
-        <table>
+    <!-- Main -->
+    <main class="main-con container flex flex-column">
+      <hr class="new1" />
+      <div class="container flex text-16-b margin-tb-8">Patient</div>
+
+      <!-- Table -->
+      <div class="table-responsive shadow-table">
+        <table class="table table-alt-row table-bordered table-hover">
           <thead>
             <tr>
               <th>Patient Name</th>
@@ -137,26 +189,25 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
+            <tr class="data-row">
               <td data-title="Patient Name">
-                <div class="table-content">
-                  <img
-                    class="patient-image"
-                    src="../images/mehcat-nbg.png"
-                    alt="mehcat"
-                  />
-                  <div class="name-id-container">
-                    <div class="name">Meh Cat</div>
-                    <div class="id">ID: 123456</div>
+                <a href="#meh-cat-detail" class="click-overlay"></a>
+                <div class="patient-name container flex gap-16">
+                  <img src="../images/mehcat-nbg.png" alt="mehcat" />
+                  <div class="container flex flex-column gap-8 m-0 p-0 w-auto">
+                    <div>Meh Cat</div>
+                    <div class="text-12-muted">ID: 123456</div>
                   </div>
                   <div class="vip-badge">VIP</div>
                 </div>
               </td>
               <td data-title="Contact">
-                <div class="table-content"><a href="">+6 0123456789</a></div>
+                <div class="container flex gap-16">
+                  <a href="">+6 0123456789</a>
+                </div>
               </td>
               <td data-title="Nationality">
-                <div class="table-content">
+                <div class="container flex gap-16">
                   <img
                     class="flag"
                     src="../images/malaysia.png"
@@ -166,40 +217,37 @@
                 </div>
               </td>
               <td data-title="Datetime">
-                <div class="table-content">
-                  <p>2023-10-01</p>
+                <div class="container flex gap-16">
+                  <time>04 05 2025</time>
+                  <time>08:08 PM</time>
                 </div>
               </td>
               <td data-title="Action">
-                <div class="table-content">
-                  <div class="action-button">
-                    <a href="#">
-                      <i class="bx bx-dots-horizontal-rounded"></i>
-                    </a>
-                  </div>
+                <div class="container flex gap-16">
+                  <a href="#">
+                    <i class="bx bx-dots-horizontal-rounded"></i>
+                  </a>
                 </div>
               </td>
             </tr>
             <tr>
               <td data-title="Patient Name">
-                <div class="table-content">
-                  <img
-                    class="patient-image"
-                    src="../images/mehcat-nbg.png"
-                    alt="mehcat"
-                  />
-                  <div class="name-id-container">
-                    <div class="name">Meh Cat</div>
-                    <div class="id">ID: 123456</div>
+                <div class="patient-name container flex gap-16">
+                  <img src="../images/mehcat-nbg.png" alt="mehcat" />
+                  <div class="container flex flex-column gap-8 m-0 p-0 w-auto">
+                    <div>Meh Cat</div>
+                    <div class="text-12-muted">ID: 123456</div>
                   </div>
                   <div class="vip-badge">VIP</div>
                 </div>
               </td>
               <td data-title="Contact">
-                <div class="table-content"><a href="">+6 0123456789</a></div>
+                <div class="container flex gap-16">
+                  <a href="">+6 0123456789</a>
+                </div>
               </td>
               <td data-title="Nationality">
-                <div class="table-content">
+                <div class="container flex gap-16">
                   <img
                     class="flag"
                     src="../images/malaysia.png"
@@ -209,40 +257,37 @@
                 </div>
               </td>
               <td data-title="Datetime">
-                <div class="table-content">
-                  <p>2023-10-01</p>
+                <div class="container flex gap-16">
+                  <time>04 05 2025</time>
+                  <time>08:08 PM</time>
                 </div>
               </td>
               <td data-title="Action">
-                <div class="table-content">
-                  <div class="action-button">
-                    <a href="#">
-                      <i class="bx bx-dots-horizontal-rounded"></i>
-                    </a>
-                  </div>
+                <div class="container flex gap-16">
+                  <a href="#">
+                    <i class="bx bx-dots-horizontal-rounded"></i>
+                  </a>
                 </div>
               </td>
             </tr>
             <tr>
               <td data-title="Patient Name">
-                <div class="table-content">
-                  <img
-                    class="patient-image"
-                    src="../images/mehcat-nbg.png"
-                    alt="mehcat"
-                  />
-                  <div class="name-id-container">
-                    <div class="name">Meh Cat</div>
-                    <div class="id">ID: 123456</div>
+                <div class="patient-name container flex gap-16">
+                  <img src="../images/mehcat-nbg.png" alt="mehcat" />
+                  <div class="container flex flex-column gap-8 m-0 p-0 w-auto">
+                    <div>Meh Cat</div>
+                    <div class="text-12-muted">ID: 123456</div>
                   </div>
                   <div class="vip-badge">VIP</div>
                 </div>
               </td>
               <td data-title="Contact">
-                <div class="table-content"><a href="">+6 0123456789</a></div>
+                <div class="container flex gap-16">
+                  <a href="">+6 0123456789</a>
+                </div>
               </td>
               <td data-title="Nationality">
-                <div class="table-content">
+                <div class="container flex gap-16">
                   <img
                     class="flag"
                     src="../images/malaysia.png"
@@ -252,40 +297,37 @@
                 </div>
               </td>
               <td data-title="Datetime">
-                <div class="table-content">
-                  <p>2023-10-01</p>
+                <div class="container flex gap-16">
+                  <time>04 05 2025</time>
+                  <time>08:08 PM</time>
                 </div>
               </td>
               <td data-title="Action">
-                <div class="table-content">
-                  <div class="action-button">
-                    <a href="#">
-                      <i class="bx bx-dots-horizontal-rounded"></i>
-                    </a>
-                  </div>
+                <div class="container flex gap-16">
+                  <a href="#">
+                    <i class="bx bx-dots-horizontal-rounded"></i>
+                  </a>
                 </div>
               </td>
             </tr>
             <tr>
               <td data-title="Patient Name">
-                <div class="table-content">
-                  <img
-                    class="patient-image"
-                    src="../images/mehcat-nbg.png"
-                    alt="mehcat"
-                  />
-                  <div class="name-id-container">
-                    <div class="name">Meh Cat</div>
-                    <div class="id">ID: 123456</div>
+                <div class="patient-name container flex gap-16">
+                  <img src="../images/mehcat-nbg.png" alt="mehcat" />
+                  <div class="container flex flex-column gap-8 m-0 p-0 w-auto">
+                    <div>Meh Cat</div>
+                    <div class="text-12-muted">ID: 123456</div>
                   </div>
                   <div class="vip-badge">VIP</div>
                 </div>
               </td>
               <td data-title="Contact">
-                <div class="table-content"><a href="">+6 0123456789</a></div>
+                <div class="container flex gap-16">
+                  <a href="">+6 0123456789</a>
+                </div>
               </td>
               <td data-title="Nationality">
-                <div class="table-content">
+                <div class="container flex gap-16">
                   <img
                     class="flag"
                     src="../images/malaysia.png"
@@ -295,40 +337,37 @@
                 </div>
               </td>
               <td data-title="Datetime">
-                <div class="table-content">
-                  <p>2023-10-01</p>
+                <div class="container flex gap-16">
+                  <time>04 05 2025</time>
+                  <time>08:08 PM</time>
                 </div>
               </td>
               <td data-title="Action">
-                <div class="table-content">
-                  <div class="action-button">
-                    <a href="#">
-                      <i class="bx bx-dots-horizontal-rounded"></i>
-                    </a>
-                  </div>
+                <div class="container flex gap-16">
+                  <a href="#">
+                    <i class="bx bx-dots-horizontal-rounded"></i>
+                  </a>
                 </div>
               </td>
             </tr>
             <tr>
               <td data-title="Patient Name">
-                <div class="table-content">
-                  <img
-                    class="patient-image"
-                    src="../images/mehcat-nbg.png"
-                    alt="mehcat"
-                  />
-                  <div class="name-id-container">
-                    <div class="name">Meh Cat</div>
-                    <div class="id">ID: 123456</div>
+                <div class="patient-name container flex gap-16">
+                  <img src="../images/mehcat-nbg.png" alt="mehcat" />
+                  <div class="container flex flex-column gap-8 m-0 p-0 w-auto">
+                    <div>Meh Cat</div>
+                    <div class="text-12-muted">ID: 123456</div>
                   </div>
                   <div class="vip-badge">VIP</div>
                 </div>
               </td>
               <td data-title="Contact">
-                <div class="table-content"><a href="">+6 0123456789</a></div>
+                <div class="container flex gap-16">
+                  <a href="">+6 0123456789</a>
+                </div>
               </td>
               <td data-title="Nationality">
-                <div class="table-content">
+                <div class="container flex gap-16">
                   <img
                     class="flag"
                     src="../images/malaysia.png"
@@ -338,34 +377,400 @@
                 </div>
               </td>
               <td data-title="Datetime">
-                <div class="table-content">
-                  <p>2023-10-01</p>
+                <div class="container flex gap-16">
+                  <time>04 05 2025</time>
+                  <time>08:08 PM</time>
                 </div>
               </td>
               <td data-title="Action">
-                <div class="table-content">
-                  <div class="action-button">
-                    <a href="#">
-                      <i class="bx bx-dots-horizontal-rounded"></i>
-                    </a>
-                  </div>
+                <div class="container flex gap-16">
+                  <a href="#">
+                    <i class="bx bx-dots-horizontal-rounded"></i>
+                  </a>
                 </div>
               </td>
             </tr>
           </tbody>
         </table>
-        <div class="center">
-          <div class="pagination">
-            <a href="#">&laquo;</a>
-            <a href="#">1</a>
-            <a href="#" class="active">2</a>
-            <a href="#">3</a>
-            <a href="#">&raquo;</a>
+      </div>
+
+      <div class="container flex flex-column gap-8 margin-tb-8">
+        <div class="pagination">
+          <button class="btn-secondary" href="#">&laquo;</button>
+          <button class="btn-secondary" href="#">1</button>
+          <button class="btn-secondary active" href="#">2</button>
+          <button class="btn-secondary" href="#">3</button>
+          <button class="btn-secondary" href="#">&raquo;</button>
+        </div>
+        <p class="m-0">Showing 10 of 15 results</p>
+      </div>
+
+      <hr class="new1" />
+
+      <!-- Appointment Card -->
+      <div class="container flex text-16-b margin-tb-8">Appointment</div>
+      <div class="appointment-card-con container flex flex-wrap">
+        <div class="appointment-card">
+          <div class="flex flex gap-16">
+            <div class="top-app">
+              <div class="image-app">
+                <img src="../images/mehcat-nbg.png" alt="mehcat" />
+              </div>
+              <div class="time-app">
+                <time>01-06-2025</time>
+              </div>
+            </div>
+            <div class="top-app">
+              <div class="title-app gap-8">
+                <span class="name-app">Meh Cat</span>
+                <span class="id-app">ID: 123456</span>
+                <div class="flex gap-8 justify-center">
+                  <img
+                    class="vip-badge"
+                    src="../images/malaysia.png"
+                    alt="Malaysia"
+                  />
+                  <span class="vip-badge">VIP</span>
+                </div>
+              </div>
+              <div class="time-app">
+                <time>10:00 AM</time>
+              </div>
+            </div>
           </div>
-          <div class="piganation-results"><p>Showing 10 of 15 results</p></div>
+          <div class="detail-app">
+            <div class="line-app">
+              <span class="key-app">Treatment</span>
+              <span class="value-app">Physical Therapy</span>
+            </div>
+            <div class="line-app">
+              <span class="key-app">Assigned doctor</span>
+              <span class="value-app">Dr. Jane Doe</span>
+            </div>
+            <div class="line-app">
+              <span class="key-app">Status / Symptoms</span>
+              <span class="value-app">Backpain, unable to walk.</span>
+            </div>
+          </div>
+        </div>
+        <div class="appointment-card">
+          <div class="flex flex gap-16">
+            <div class="top-app">
+              <div class="image-app">
+                <img src="../images/mehcat-nbg.png" alt="mehcat" />
+              </div>
+              <div class="time-app">
+                <time>01-06-2025</time>
+              </div>
+            </div>
+            <div class="top-app">
+              <div class="title-app gap-8">
+                <span class="name-app">Meh Cat</span>
+                <span class="id-app">ID: 123456</span>
+                <div class="flex gap-8 justify-center">
+                  <img
+                    class="vip-badge"
+                    src="../images/malaysia.png"
+                    alt="Malaysia"
+                  />
+                  <span class="vip-badge">VIP</span>
+                </div>
+              </div>
+              <div class="time-app">
+                <time>10:00 AM</time>
+              </div>
+            </div>
+          </div>
+          <div class="detail-app">
+            <div class="line-app">
+              <span class="key-app">Treatment</span>
+              <span class="value-app">Physical Therapy</span>
+            </div>
+            <div class="line-app">
+              <span class="key-app">Assigned doctor</span>
+              <span class="value-app">Dr. Jane Doe</span>
+            </div>
+            <div class="line-app">
+              <span class="key-app">Status / Symptoms</span>
+              <span class="value-app">Backpain, unable to walk.</span>
+            </div>
+          </div>
+        </div>
+        <div class="appointment-card">
+          <div class="flex flex gap-16">
+            <div class="top-app">
+              <div class="image-app">
+                <img src="../images/mehcat-nbg.png" alt="mehcat" />
+              </div>
+              <div class="time-app">
+                <time>01-06-2025</time>
+              </div>
+            </div>
+            <div class="top-app">
+              <div class="title-app gap-8">
+                <span class="name-app">Meh Cat</span>
+                <span class="id-app">ID: 123456</span>
+                <div class="flex gap-8 justify-center">
+                  <img
+                    class="vip-badge"
+                    src="../images/malaysia.png"
+                    alt="Malaysia"
+                  />
+                  <span class="vip-badge">VIP</span>
+                </div>
+              </div>
+              <div class="time-app">
+                <time>10:00 AM</time>
+              </div>
+            </div>
+          </div>
+          <div class="detail-app">
+            <div class="line-app">
+              <span class="key-app">Treatment</span>
+              <span class="value-app">Physical Therapy</span>
+            </div>
+            <div class="line-app">
+              <span class="key-app">Assigned doctor</span>
+              <span class="value-app">Dr. Jane Doe</span>
+            </div>
+            <div class="line-app">
+              <span class="key-app">Status / Symptoms</span>
+              <span class="value-app">Backpain, unable to walk.</span>
+            </div>
+          </div>
+        </div>
+        <div class="appointment-card">
+          <div class="flex flex gap-16">
+            <div class="top-app">
+              <div class="image-app">
+                <img src="../images/mehcat-nbg.png" alt="mehcat" />
+              </div>
+              <div class="time-app">
+                <time>01-06-2025</time>
+              </div>
+            </div>
+            <div class="top-app">
+              <div class="title-app gap-8">
+                <span class="name-app">Meh Cat</span>
+                <span class="id-app">ID: 123456</span>
+                <div class="flex gap-8 justify-center">
+                  <img
+                    class="vip-badge"
+                    src="../images/malaysia.png"
+                    alt="Malaysia"
+                  />
+                  <span class="vip-badge">VIP</span>
+                </div>
+              </div>
+              <div class="time-app">
+                <time>10:00 AM</time>
+              </div>
+            </div>
+          </div>
+          <div class="detail-app">
+            <div class="line-app">
+              <span class="key-app">Treatment</span>
+              <span class="value-app">Physical Therapy</span>
+            </div>
+            <div class="line-app">
+              <span class="key-app">Assigned doctor</span>
+              <span class="value-app">Dr. Jane Doe</span>
+            </div>
+            <div class="line-app">
+              <span class="key-app">Status / Symptoms</span>
+              <span class="value-app">Backpain, unable to walk.</span>
+            </div>
+          </div>
+        </div>
+        <div class="appointment-card">
+          <div class="flex flex gap-16">
+            <div class="top-app">
+              <div class="image-app">
+                <img src="../images/mehcat-nbg.png" alt="mehcat" />
+              </div>
+              <div class="time-app">
+                <time>01-06-2025</time>
+              </div>
+            </div>
+            <div class="top-app">
+              <div class="title-app gap-8">
+                <span class="name-app">Meh Cat</span>
+                <span class="id-app">ID: 123456</span>
+                <div class="flex gap-8 justify-center">
+                  <img
+                    class="vip-badge"
+                    src="../images/malaysia.png"
+                    alt="Malaysia"
+                  />
+                  <span class="vip-badge">VIP</span>
+                </div>
+              </div>
+              <div class="time-app">
+                <time>10:00 AM</time>
+              </div>
+            </div>
+          </div>
+          <div class="detail-app">
+            <div class="line-app">
+              <span class="key-app">Treatment</span>
+              <span class="value-app">Physical Therapy</span>
+            </div>
+            <div class="line-app">
+              <span class="key-app">Assigned doctor</span>
+              <span class="value-app">Dr. Jane Doe</span>
+            </div>
+            <div class="line-app">
+              <span class="key-app">Status / Symptoms</span>
+              <span class="value-app">Backpain, unable to walk.</span>
+            </div>
+          </div>
+        </div>
+        <div class="appointment-card">
+          <div class="flex flex gap-16">
+            <div class="top-app">
+              <div class="image-app">
+                <img src="../images/mehcat-nbg.png" alt="mehcat" />
+              </div>
+              <div class="time-app">
+                <time>01-06-2025</time>
+              </div>
+            </div>
+            <div class="top-app">
+              <div class="title-app gap-8">
+                <span class="name-app">Meh Cat</span>
+                <span class="id-app">ID: 123456</span>
+                <div class="flex gap-8 justify-center">
+                  <img
+                    class="vip-badge"
+                    src="../images/malaysia.png"
+                    alt="Malaysia"
+                  />
+                  <span class="vip-badge">VIP</span>
+                </div>
+              </div>
+              <div class="time-app">
+                <time>10:00 AM</time>
+              </div>
+            </div>
+          </div>
+          <div class="detail-app">
+            <div class="line-app">
+              <span class="key-app">Treatment</span>
+              <span class="value-app">Physical Therapy</span>
+            </div>
+            <div class="line-app">
+              <span class="key-app">Assigned doctor</span>
+              <span class="value-app">Dr. Jane Doe</span>
+            </div>
+            <div class="line-app">
+              <span class="key-app">Status / Symptoms</span>
+              <span class="value-app">Backpain, unable to walk.</span>
+            </div>
+          </div>
+        </div>
+        <div class="appointment-card">
+          <div class="flex flex gap-16">
+            <div class="top-app">
+              <div class="image-app">
+                <img src="../images/mehcat-nbg.png" alt="mehcat" />
+              </div>
+              <div class="time-app">
+                <time>01-06-2025</time>
+              </div>
+            </div>
+            <div class="top-app">
+              <div class="title-app gap-8">
+                <span class="name-app">Meh Cat</span>
+                <span class="id-app">ID: 123456</span>
+                <div class="flex gap-8 justify-center">
+                  <img
+                    class="vip-badge"
+                    src="../images/malaysia.png"
+                    alt="Malaysia"
+                  />
+                  <span class="vip-badge">VIP</span>
+                </div>
+              </div>
+              <div class="time-app">
+                <time>10:00 AM</time>
+              </div>
+            </div>
+          </div>
+          <div class="detail-app">
+            <div class="line-app">
+              <span class="key-app">Treatment</span>
+              <span class="value-app">Physical Therapy</span>
+            </div>
+            <div class="line-app">
+              <span class="key-app">Assigned doctor</span>
+              <span class="value-app">Dr. Jane Doe</span>
+            </div>
+            <div class="line-app">
+              <span class="key-app">Status / Symptoms</span>
+              <span class="value-app">Backpain, unable to walk.</span>
+            </div>
+          </div>
         </div>
       </div>
+      <hr class="new1 last-line" />
     </main>
+    <!-- Slide-in Right Panel -->
+    <aside id="meh-cat-detail" class="patient-detail-panel">
+      <a href="#" class="close-panel btn btn-close">
+        <i class="bx bx-window-close"></i>
+      </a>
+      <div class="container flex flex-column gap-8">
+        <div class="container flex text-16-b">Detail</div>
+        <div class="patient-name container flex gap-16">
+          <img src="../images/mehcat-nbg.png" alt="mehcat" />
+          <div class="container flex flex-column justify-left m-0 gap-8 w-auto">
+            <div>Meh Cat</div>
+            <div class="text-12-muted">ID: 123456</div>
+            <div class="vip-badge">VIP</div>
+            <div class="container m-0 p-0 flex gap-8">
+              <img class="flag" src="../images/malaysia.png" alt="Malaysia" />
+              <span>Malaysia</span>
+            </div>
+          </div>
+        </div>
+        <div class="panel-items">
+          <div class="container flex gap-16 w-auto">
+            <i class="bx bxs-phone"></i>
+            <a href="#">+6 0123456789</a>
+          </div>
+          <div class="container flex gap-16 w-auto">
+            <i class="bx bxs-envelope"></i>
+            <a href="#">mehcat@gmail.com</a>
+          </div>
+          <div class="container flex gap-16 w-auto">
+            <i class="bx bxs-cake"></i>
+            <time>01-04-2020</time>
+            <span>5 y/o</span>
+          </div>
+
+          <div class="container flex gap-16 w-auto">
+            <i class="bx bx-id-card"></i>
+            <span>200401-14-1111</span>
+            <span>NRIC</span>
+          </div>
+
+          <div class="container flex gap-16 w-auto">
+            <i class="bx bxs-briefcase"></i>
+            <span>Life guard</span>
+          </div>
+          <div class="container flex gap-16 w-auto">
+            <i class="bx bxs-calendar-edit"></i>
+            <time>31-01-2025</time>
+            <span>4 months ago</span>
+          </div>
+          <div class="container flex gap-16 w-auto">
+            <i class="bx bxs-edit"></i>
+            <div>Allegic to shellfish</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
     <script src="../js/script.js"></script>
   </body>
 </html>
